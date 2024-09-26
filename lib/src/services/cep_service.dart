@@ -1,5 +1,4 @@
 import 'package:fast_location_app/src/modules/home/model/cep_model.dart';
-
 import '../shared/http/http_client.dart';
 
 class CEPService {

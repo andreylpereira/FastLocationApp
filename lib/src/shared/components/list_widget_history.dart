@@ -13,7 +13,7 @@ class ListWidgetHistory extends StatelessWidget {
     return Observer(
       builder: (_) {
         return Container(
-          height: 230,
+          height: 250,
           child: ListView.builder(
             itemCount: history.length,
             itemBuilder: (context, index) {
@@ -45,7 +45,7 @@ class ListWidgetHistory extends StatelessWidget {
                     child: Text('${item.bairro}', textAlign: TextAlign.start,  style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold)),
                   ),
                   Expanded(
-                    child: Text('${item.localidade}, ${item.uf}', textAlign: TextAlign.end,  style: TextStyle(fontSize: 14, color: Colors.black)),
+                    child: Text('${item.localidade}, ${item.uf}', textAlign: TextAlign.end,  style: TextStyle(fontSize: 16, color: Colors.black45, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

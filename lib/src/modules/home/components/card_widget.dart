@@ -26,14 +26,14 @@ class CardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
-        height: 150,
+        height: 140,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             width: 2,
             color: Color.fromARGB(255, 200, 200, 200),
           ),
-          color: Color.fromARGB(255, 201, 201, 201),
+          color: Color.fromARGB(255, 200, 200, 200),
         ),
         child: Center(
           child: cep != null
