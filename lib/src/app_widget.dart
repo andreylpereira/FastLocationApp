@@ -1,5 +1,5 @@
-import 'package:fast_location_app/src/modules/home/page/home_page.dart';
 import 'package:flutter/material.dart';
+import 'shared/routes/app_routes.dart'; 
 
 class AppWidget extends StatelessWidget {
   final String title;
@@ -9,8 +9,10 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      title: title,
+      initialRoute: AppRoutes.home,
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

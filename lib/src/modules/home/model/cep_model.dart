@@ -1,43 +1,43 @@
 class CEPModel {
-  String cep = "";
-  String logradouro = "";
-  String complemento = "";
-  String bairro = "";
-  String localidade = "";
-  String uf = "";
-  bool erro = false;
+  final String? cep;
+  final String? logradouro;
+  final String? complemento;
+  final String? bairro;
+  final String? localidade;
+  final String? uf;
+  final bool erro;
 
   CEPModel({
-    this.cep = "",
-    this.logradouro = "",
-    this.complemento = "",
-    this.bairro = "",
-    this.localidade = "",
-    this.uf = "", 
-    required bool erro
+    this.cep,
+    this.logradouro,
+    this.complemento,
+    this.bairro,
+    this.localidade,
+    this.uf,
+    this.erro = false,
   });
 
-  CEPModel.fromJson(Map<String, dynamic> json) {
-    if (json['erro'] != null) {
-      erro = true;
-      return;
-    }
-    cep = json['cep'];
-    logradouro = json['logradouro'];
-    complemento = json['complemento'];
-    bairro = json['bairro'];
-    localidade = json['localidade'];
-    uf = json['uf'];
+  factory CEPModel.fromJson(Map<String, dynamic> json) {
+    return CEPModel(
+      cep: json['cep'],
+      logradouro: json['logradouro'],
+      complemento: json['complemento'],
+      bairro: json['bairro'],
+      localidade: json['localidade'],
+      uf: json['uf'],
+      erro: false,
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['cep'] = cep;
-    data['logradouro'] = logradouro;
-    data['complemento'] = complemento;
-    data['bairro'] = bairro;
-    data['localidade'] = localidade;
-    data['uf'] = uf;
-    return data;
+    return {
+      'cep': cep,
+      'logradouro': logradouro,
+      'complemento': complemento,
+      'bairro': bairro,
+      'localidade': localidade,
+      'uf': uf,
+      'erro': erro,
+    };
   }
 }
