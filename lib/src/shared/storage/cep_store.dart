@@ -16,7 +16,7 @@ abstract class _CEPStore with Store {
   ObservableList<CEPModel> cepList = ObservableList<CEPModel>();
 
   @action
-  Future<void> loadCEPs() async {
+  Future<void> loadCEPs() async { 
     cepList.clear();
     final storedListJson = box.get('cepList');
     if (storedListJson != null) {
@@ -30,5 +30,4 @@ abstract class _CEPStore with Store {
     cepList.add(cep);
     await box.put('cepList', jsonEncode(cepList.map((e) => e.toJson()).toList()));
   }
-
 }

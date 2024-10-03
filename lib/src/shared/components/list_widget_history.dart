@@ -1,3 +1,4 @@
+import 'package:fast_location_app/src/shared/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_location_app/src/modules/home/model/cep_model.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -42,10 +43,10 @@ class ListWidgetHistory extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Text('${item.bairro}', textAlign: TextAlign.start,  style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold)),
+                    child: Text('${item.bairro}', textAlign: TextAlign.start,  style: TextStyle(fontSize: 16, color: AppColors.textColor, fontWeight: FontWeight.bold)),
                   ),
                   Expanded(
-                    child: Text('${item.localidade}, ${item.uf}', textAlign: TextAlign.end,  style: TextStyle(fontSize: 16, color: Colors.black45, fontWeight: FontWeight.bold)),
+                    child: Text('${item.localidade}, ${item.uf}', textAlign: TextAlign.end,  style: TextStyle(fontSize: 16, color: AppColors.textGreyColor, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -56,10 +57,10 @@ class ListWidgetHistory extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Text('${item.logradouro}', textAlign: TextAlign.start,  style: TextStyle(fontSize: 14, color: Colors.black)), 
+                    child: Text('${item.logradouro}', textAlign: TextAlign.start,  style: TextStyle(fontSize: 14, color: AppColors.textColor)), 
                   ),
                   Expanded(
-                    child: Text('${item.cep}', textAlign: TextAlign.end, style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold)),
+                    child: Text('${item.cep}', textAlign: TextAlign.end, style: TextStyle(fontSize: 16, color: AppColors.textColor, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

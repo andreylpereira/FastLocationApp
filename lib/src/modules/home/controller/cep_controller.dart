@@ -1,25 +1,36 @@
 import 'package:fast_location_app/src/modules/home/model/cep_model.dart';
 import 'package:fast_location_app/src/modules/home/repositories/cep_repository.dart';
-import 'package:fast_location_app/src/modules/home/store/cep_store.dart';
+import 'package:fast_location_app/src/modules/home/repositories/cep_local_repository.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:map_launcher/map_launcher.dart';
+import 'package:mobx/mobx.dart';
 
-class CEPController {
+
+
+part 'cep_controller.g.dart';
+
+class CEPController = _CEPController with _$CEPController;
+
+abstract class _CEPController with Store {
   final CEPRepository cepRepository;
-  final CEPStore cepStore;
+  final CEPLocalRepository cepLocalRepository;
 
-  CEPController(this.cepRepository, this.cepStore);
-  
+  _CEPController(this.cepRepository, this.cepLocalRepository);
+
+  @observable
+  ObservableList<CEPModel> ceps = ObservableList<CEPModel>();
+
+  @action
   Future<void> loadCEPs() async {
-    await cepStore.loadCEPs();
+    await cepLocalRepository.loadCEPs();
+    ceps.clear();
+    ceps.addAll(cepLocalRepository.cepList);
   }
 
+  @action
   Future<void> saveCEP(CEPModel cep) async {
-    await cepStore.saveCEP(cep);
-  }
-
-  Future<CEPModel> buscarCEP(String cep) async {
-    return await cepRepository.buscarCEP(cep);
+    await cepLocalRepository.saveCEP(cep);
+    ceps.add(cep);
   }
 
   Future<void> openMaps(CEPModel cepModel) async {

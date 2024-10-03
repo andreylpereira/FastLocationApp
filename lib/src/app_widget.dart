@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'shared/routes/app_routes.dart'; 
+import 'routes/app_routes.dart'; 
 
 class AppWidget extends StatelessWidget {
   final String title;

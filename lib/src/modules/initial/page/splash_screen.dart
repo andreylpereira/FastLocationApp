@@ -1,4 +1,5 @@
 import 'package:fast_location_app/src/modules/home/page/home_page.dart';
+import 'package:fast_location_app/src/shared/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -12,18 +13,18 @@ class SplashScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: AppColors.primaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
             ),
             SizedBox(height: 20),
             Text(
               'Carregando...',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+              style: TextStyle(color: AppColors.primaryColor, fontSize: 24),
             ),
           ],
         ),

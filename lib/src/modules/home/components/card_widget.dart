@@ -1,3 +1,4 @@
+import 'package:fast_location_app/src/shared/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
@@ -31,9 +32,9 @@ class CardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             width: 2,
-            color: Color.fromARGB(255, 200, 200, 200),
+            color: AppColors.cardBackgroundColor,
           ),
-          color: Color.fromARGB(255, 200, 200, 200),
+          color: AppColors.cardBackgroundColor,
         ),
         child: Center(
           child: cep != null
@@ -47,7 +48,7 @@ class CardWidget extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.green),
+                              color: AppColors.primaryColor),
                           textAlign: TextAlign.center),
                     ),
                     Text('CEP: $cep', style: TextStyle(fontSize: 16)),
@@ -63,7 +64,7 @@ class CardWidget extends StatelessWidget {
                 )
               : Text(
                   'Efetue a localização de um endereço',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: AppColors.textColor),
                   textAlign: TextAlign.center,
                 ),
         ),

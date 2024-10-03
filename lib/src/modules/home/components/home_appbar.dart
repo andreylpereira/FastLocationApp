@@ -1,3 +1,4 @@
+import 'package:fast_location_app/src/shared/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,24 +12,24 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 220, 220, 220),
+      backgroundColor: AppColors.backgroundColor,
       elevation: 0,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.arrow_back, color: Colors.green),
+          Icon(Icons.arrow_back, color: AppColors.primaryColor),
           SizedBox(width: 8.0),
           Text(
             'Fast Location App',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.green,
+              color: AppColors.primaryColor,
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(width: 8.0),
-          Icon(Icons.arrow_forward, color: Colors.green),
+          Icon(Icons.arrow_forward, color: AppColors.primaryColor),
         ],
       ),
     );

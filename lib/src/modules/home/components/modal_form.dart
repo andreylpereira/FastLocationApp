@@ -1,8 +1,9 @@
 import 'package:fast_location_app/src/modules/home/components/invalid_cep_modal.dart';
 import 'package:fast_location_app/src/modules/home/controller/cep_controller.dart';
-import 'package:fast_location_app/src/services/cep_service.dart';
+import 'package:fast_location_app/src/modules/home/service/cep_service.dart';
+import 'package:fast_location_app/src/shared/colors/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:fast_location_app/src/shared/http/http_client.dart';
+import 'package:fast_location_app/src/http/http_client.dart';
 import 'package:fast_location_app/src/modules/home/model/cep_model.dart';
 import 'package:fast_location_app/src/modules/home/repositories/cep_repository.dart';
 
@@ -32,15 +33,15 @@ class ModalForm {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
-                  onPrimary: Colors.white,
+                  primary: AppColors.primaryColor,
+                  onPrimary: AppColors.secondaryColor,
                 ),
                 onPressed: () async {
                   String cepInput = controller.text;
                   CEPModel? cepData;
 
                   try {
-                    cepData = await cepRepository.buscarCEP(cepInput);
+                    cepData = await cepRepository.getCEP(cepInput);
                     if (cepData?.cep != null) {
                       await cepController.saveCEP(cepData);
                       await cepController.loadCEPs();
